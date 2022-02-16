@@ -4,7 +4,7 @@ import { Button, Col, Row } from 'react-bootstrap'
 export const CarouselButtons = () => {
   return (
       <>
-          <Button size='lg' variant='warning'>
+          <Button variant='warning'>
               <Row>
                   <Col sm={2}>
                       <i className="bi bi-play-circle-fill"></i>
@@ -14,13 +14,13 @@ export const CarouselButtons = () => {
                   </Col>
               </Row>
           </Button>
-          <Button size='lg' variant='outline-warning' className='mx-2'>
+          <Button size='auto' variant='outline-warning' className='mx-2'>
               <Row>
                 <Col sm={2}>
                       <i className="bi bi-plus"></i>
                   </Col>
                   <Col sm={10}>
-                      VER MÁS TARDE
+                      VER DESPUÉS
                   </Col>
               </Row>
           </Button>

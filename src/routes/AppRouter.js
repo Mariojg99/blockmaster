@@ -34,7 +34,7 @@ const AppRouter = () => {
     
     if(checking){
       return(
-          <div className='text-center my-10'>
+          <div className='text-center my-5'>
               <Spinner animation="border" variant="warning" size='lg' />
               <h1>Cargando...</h1>
           </div>

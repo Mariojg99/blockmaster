@@ -41,7 +41,7 @@ export const NavBar = () => {
                                 </Button>
                             </InputGroup>
                         </Form>
-                        <Dropdown className='m+-2'>
+                        <Dropdown className='mx-2'>
                             <Dropdown.Toggle id="dropdown-button-dark-example1" variant="primary">
                                 Usuario
                             </Dropdown.Toggle>
