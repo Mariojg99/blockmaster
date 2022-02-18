@@ -16,7 +16,7 @@ export const CardMovie = ({id, poster, calificacion}) => {
               <Card.ImgOverlay className='mt-3 p-0'>
                   <Card.Text>
                     <CalificacionDiv>
-                        <i className="bi bi-star-fill text-warning" />
+                        <i className="bi bi-star-fill text-warning mx-1" />
                         <span>{calificacion}</span>
                     </CalificacionDiv>
                   </Card.Text>
