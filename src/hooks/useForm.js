@@ -18,10 +18,6 @@ export const useForm = ( initialState = {} ) => {
 
     }
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    }
-
-    return  {values, handleInputChange, reset, handleSubmit} ;
+    return  {values, handleInputChange, reset} ;
 
 }
