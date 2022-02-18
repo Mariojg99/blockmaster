@@ -6,27 +6,30 @@ import { CardMovie } from './CardMovie';
  const CardListMovie = memo(() => {
 
     const [movies, setMovies] = useState([])
+    const [pagina, setPagina] = useState(1)
     // const [checking, setChecking] = useState(true)
 
-    useEffect(async () => {
-        const resp = await fetch(API_URL)
+    useEffect(() => {
+        getMoviesbyScroll()
+    }, [pagina])
+
+    const getMoviesbyScroll = async () => {
+        const resp = await fetch(API_URL+pagina)
         const data = await resp.json()
         console.log(data);
         setMovies([...movies, ...data.results]);
-        // setChecking(false)
-        
-    }, [setMovies])
-
+    }
     
-    console.log(movies);
+    const scrollBottom = () => {
+        setPagina(pagina + 1)
+    }
 
-    // if(checking){
-    //     return(
-    //         <div className='text-center my-10'>
-    //             <Spinner animation="border" variant="warning" size='lg' />
-    //         </div>
-    //     )
-    //   }
+    window.onscroll = () => {
+        const body = document.querySelector('body')
+        if (document.documentElement.scrollTop + window.innerHeight >= body.scrollHeight ) {
+            scrollBottom();
+        }
+    }
     
   return (
     <Container>

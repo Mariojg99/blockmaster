@@ -16,10 +16,12 @@ export const NavBar = () => {
     }
   
     return (
-        <div>
-            <Navbar bg="dark" variant="dark" expand='md'>
+        <header 
+            // className='position-sticky top-0'
+        >
+            <Navbar bg="transparent" variant="dark" expand='md'>
                 <Container className='align-items-center'>
-                    <Navbar.Brand href="#home">
+                    <Navbar.Brand href="/home">
                         <img src="https://res.cloudinary.com/karma09-jm/image/upload/v1644198232/BlockMaster/logo-blockBuster_awviao.png" alt="logo" width={100} />
                     </Navbar.Brand>
                     <Navbar.Collapse id="navbarScroll">
@@ -47,7 +49,7 @@ export const NavBar = () => {
                             </Dropdown.Toggle>
 
                             <Dropdown.Menu variant="dark">
-                                <Dropdown.Item href="#/action-1" active>
+                                <Dropdown.Item href="/registro-peliculas" active>
                                     Agregar Película
                                 </Dropdown.Item>
                                 <Dropdown.Divider />
@@ -58,6 +60,6 @@ export const NavBar = () => {
                     <Navbar.Toggle aria-controls="navbarScroll" />
                 </Container>
             </Navbar>
-        </div>
+        </header>
     )
 }
