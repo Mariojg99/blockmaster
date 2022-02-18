@@ -9,11 +9,13 @@ export const TableMovies = () => {
 
     return (
         <div>
-            <Table striped bordered hover variant="dark">
+            <Table striped bordered hover variant="dark" className='text-center'>
                 <thead>
                     <tr>
                         <th>Poster</th>
-                        <th>Película</th>
+                        <th>Nombre</th>
+                        <th>Género</th>
+                        <th>Calificación</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
@@ -23,27 +25,20 @@ export const TableMovies = () => {
                             (
                                 movies.map((element, index) => (
                                     <tr key={index}>
-                                        <td>{element.poster}</td>
                                         <td>
-                                            <Card>
-                                                <Card.Header as="h5">Featured</Card.Header>
-                                                <Card.Body>
-                                                    <Card.Title>{element.titulo}</Card.Title>
-                                                    <Card.Text>
-                                                        <i className="bi bi-star-fill text-warning" />
-                                                        <span className='mx-2'>{element.calificacion}</span>
-                                                    </Card.Text>
-                                                    <Card.Text>
-                                                        <p>{element.sinopsis}</p>
-                                                    </Card.Text>
-                                                </Card.Body>
-                                            </Card>
+                                            <img src={element.poster} alt={element.titulo} width="80px"/>
                                         </td>
+                                        <td>{element.titulo}</td>
+                                        <td>{element.genero}</td>
                                         <td>
-                                            <Button type='button' variant='primary'>
+                                            <i className="bi bi-star-fill text-warning" />
+                                            <span className='mx-2'>{element.calificacion}</span>
+                                        </td>
+                                        <td className='text-center'>
+                                            <Button type='button' variant='secondary'>
                                                 <i className="bi bi-pencil-fill" />
                                             </Button>
-                                            <Button type='button' variant='warning'>
+                                            <Button type='button' variant='warning' className='mx-1'>
                                                 <i className="bi bi-trash-fill" />
                                             </Button>
                                         </td>

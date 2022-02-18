@@ -4,7 +4,7 @@ import { typesMovies } from "../types/types";
 
 export const registerMovieAsync = (titulo, genero, calificacion, urlTrailer, sinopsis, poster) => {
     console.log(titulo);
-    return async(dispatch) => {
+    return async (dispatch) => {
         const newMovie = {
             titulo, genero, calificacion, urlTrailer, sinopsis, poster
         }
@@ -27,7 +27,7 @@ export const registerMovieSync = (pelicula) => {
 
 export const listMoviesAsync = () => {
     return async (dispatch) => {
-        const querySnapshot = await getDocs(collection,(db, "peliculas"));
+        const querySnapshot = await getDocs(collection(db, "peliculas"));
         const pelicula = [];
         querySnapshot.forEach((titulo) => {
             pelicula.push({

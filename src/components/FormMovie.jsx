@@ -68,7 +68,6 @@ export const FormMovie = () => {
                         <InputGroup.Text id="basic-addon2">
                             <i className="bi bi-menu-button-wide"/>
                         </InputGroup.Text>
-
                         <Form.Select aria-label="Default select example" name='genero' value={genero} onChange={handleInputChange}>
                                 <option>Género</option>
                                 <option value="accion">Acción</option>
