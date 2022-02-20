@@ -6,5 +6,6 @@ export const types = {
 
 export const typesMovies = {
     register: 'register',
-    list: 'list'
+    list: 'list',
+    delete: 'delete'
 }

@@ -15,6 +15,11 @@ export const moviesReducer = (state = initialState, action) => {
             return {
                 movies: [...action.payload]
             }
+
+        case typesMovies.delete:
+            return {
+                peliculas: state.movies.filter(movie => movie.titulo !== action.payload)
+            }
     
         default:
             return state

@@ -1,8 +1,12 @@
 import React from 'react'
 import { Button, Card, Table } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
+import { deleteAsync } from '../actions/actionMovies'
 
 export const TableMovies = () => {
+
+    const dispatch = useDispatch()
 
     const {movies} = useSelector(store => store.pelicula);
     console.log(movies)
@@ -35,17 +39,25 @@ export const TableMovies = () => {
                                             <span className='mx-2'>{element.calificacion}</span>
                                         </td>
                                         <td className='text-center'>
-                                            <Button type='button' variant='secondary'>
+                                            <Button 
+                                                type='button' 
+                                                variant='secondary'
+                                            >
                                                 <i className="bi bi-pencil-fill" />
                                             </Button>
-                                            <Button type='button' variant='warning' className='mx-1'>
+                                            <Button 
+                                                type='button' 
+                                                variant='warning' 
+                                                className='mx-1'
+                                                onClick={() => dispatch(deleteAsync(element.titulo))}
+                                            >
                                                 <i className="bi bi-trash-fill" />
                                             </Button>
                                         </td>
                                     </tr>
                                 ))
                             ):
-                            <p>Datos no disponibles</p>
+                            <p>No hay datos</p>
                     }
                 </tbody>
             </Table>
